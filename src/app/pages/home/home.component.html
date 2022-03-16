@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-title class="subtitulo ion-text-wrap">
+    Productos Disponibles
+  </ion-title>
+  <ion-buttons slot="start">
+    <ion-button (click)="openMenu()">
+      <ion-icon color="primary" slot="icon-only" name="menu-sharp"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content style="--background: rgb(196, 188, 188);">
+  <ion-row>
+    <ion-col *ngFor="let producto of productos" size-xl="2.5" size-lg="2.5" size-md="3" size-sm="5" size-xs="12">
+    <!-- <div *ngFor="let producto of productos"> -->
+      <app-producto [producto]= producto></app-producto>
+    <!-- </div> -->
+  </ion-col>
+</ion-row>
+</ion-content>
+

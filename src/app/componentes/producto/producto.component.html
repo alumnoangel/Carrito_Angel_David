@@ -1,0 +1,29 @@
+<!-- <ion-card>
+    <ion-img class="img-producto" src="https://source.unsplash.com/random/400x200/?{{producto.nombre}}"></ion-img>
+  <ion-item lines="full">
+    <ion-label class="subtitulo">{{producto.nombre}}</ion-label>
+  </ion-item>
+  <p class="tachado"> {{producto.precioNormal}}$</p>
+  <p class="precio"> {{producto.precioReducido}}$</p>
+  <ion-icon (click)="addCarrito()" class="icon-producto" name="cart-sharp"></ion-icon>
+</ion-card> -->
+
+
+
+<ion-card class="carta">
+  
+  <img style="height: 190px; width: 100%; float: center;" text-align="center"  src="https://source.unsplash.com/random/400x200/?{{producto.nombre}}">
+
+  <ion-card-header>
+    <ion-card-title>{{producto.nombre}}</ion-card-title>
+    <ion-card-subtitle class="tachado">{{producto.precioNormal}}€</ion-card-subtitle>
+    <ion-card-subtitle class="precio">{{producto.precioReducido}}€</ion-card-subtitle>
+    
+<!-- <ion-button (click)="addCarrito()"> -->
+    <ion-icon (click)="addCarrito()" class="icon-producto" name="cart-sharp"></ion-icon>
+  <!-- </ion-button> -->
+  </ion-card-header>
+  
+</ion-card>
+
+

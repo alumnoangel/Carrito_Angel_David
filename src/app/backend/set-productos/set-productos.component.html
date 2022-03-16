@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-title class="subtitulo ion-text-wrap">
+    Configuración de productos
+  </ion-title>
+  <ion-buttons slot="start">
+    <ion-button (click)="openMenu()">
+      <ion-icon color="primary" slot="icon-only" name="menu-sharp"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h3 class="subtitulo encabezado">Ingrese datos del producto</h3>
+
+<ion-item>
+  <ion-label class="normal" position="floating">
+    Nombre:
+  </ion-label>
+    <ion-input [(ngModel)]="newProducto.nombre" class="normal" type="text" inputmode="text">
+    </ion-input>
+</ion-item>
+<ion-item>
+  <ion-label class="normal" position="floating">
+    Precio normal:
+  </ion-label>
+    <ion-input [(ngModel)]="newProducto.precioNormal" class="normal" type="number" inputmode="numeric">
+    </ion-input>
+</ion-item>
+<ion-item>
+  <ion-label class="normal" position="floating">
+    Precio reducido:
+  </ion-label>
+    <ion-input [(ngModel)]="newProducto.precioReducido" class="normal" type="number" inputmode="numeric">
+    </ion-input>
+</ion-item>
+<ion-item>
+  <ion-label class="normal">
+    Foto:
+  </ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+        <label for="subirFoto">
+        <ion-icon slot="icon-only" name="images"></ion-icon>
+        </label>
+        <input (change)="subirImagenNueva($event)" id="subirFoto" style="display: none" type="file" accept="image/*">
+      </ion-button>
+    </ion-buttons>
+    
+</ion-item>
+<ion-button style="margin: 30px;"expand="full" color="dark"
+(click)="guardarProducto()">
+  Guardar
+</ion-button>
+
+
+
+
+<ion-item *ngFor="let producto of productos">
+  <ion-label class="normal">{{producto.nombre}}</ion-label>
+  <ion-buttons slot="end">
+    <!-- En la funcion borrarProducto mando como argumento el producto que deseo borrar -->
+    <ion-button (click)="borrarProducto(producto)">
+      <ion-icon  slot="icon-only" color="danger" name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-item>
+
+<!-- src entre corchetes porque hacer referencia a una variable -->
+<img [src]="newImage">
+
+
+</ion-content>
